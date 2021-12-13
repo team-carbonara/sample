@@ -1,0 +1,18 @@
+<h1>Login</h1>
+<p id="notice"><%= notice %></p>
+<%= form_with(scope: :authentication, local: true, url: recognitions_path) do |f| %>
+
+  <div class="field">
+    <%= f.label :e_mail %>
+    <%= f.text_field :e_mail %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "login" %>
+  </div>
+<% end %>

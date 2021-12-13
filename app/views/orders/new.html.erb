@@ -1,0 +1,53 @@
+<h1><%= t("title.ordering") %></h1>
+
+<%= form_with(model: @order, local: true) do |form| %>
+  <div class="field">
+    <%= Date.today %>
+  </div>
+  <div class="field">
+    <%= form.label :payment %>
+    <%= form.select :payment, Order.payments_i18n.invert %>
+  </div>
+  <div class="field">
+    <%= @order.payment_stat %>
+    <%= form.hidden_field :payment_stat %>
+  </div>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th><%= t("column.product_name") %></th>
+          <th><%= t("column.unit_price") %></th>
+          <th><%= t("column.discount_rate") %></th>
+          <th><%= t("column.quantity") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% total_amount = 0 %>
+        <%= form.fields_for :order_details do |detail| %>
+          <% order_detail = @order.order_details[detail.index] %>
+          <% price = order_detail.product.unit_price %>
+          <% rate = order_detail.discount_rate %>
+          <% quantity = order_detail.quantity %>
+          <tr>
+            <td><%= order_detail.product.name %></td>
+            <td class="right_shift"><%= number_with_delimiter price.round %></td>
+            <td><%= "#{rate}%" %></td>
+            <td><%= quantity %></td>
+            <%= detail.hidden_field :discount_rate %>
+            <%= detail.hidden_field :quantity %>
+            <%= detail.hidden_field :product_id %>
+          </tr>
+          <% total_amount += price * quantity %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <%= t("column.total_amount") %>
+    <%= number_with_delimiter total_amount.round %>
+  </div>
+  <div class="actions">
+    <%= form.submit t('button.order') %>
+  </div>
+<% end %>

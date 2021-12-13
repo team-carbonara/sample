@@ -1,0 +1,18 @@
+<%= form_with(scope: :products, local: true, url: search_path, method: :get) do |form| %>
+  <div>
+    <%= form.text_field :product_name, class: "search_box" %>
+    <%= form.submit t("button.search") %>
+  </div>
+
+  <%= t("title.customer_ranking") %>
+  <div>
+    <div class="checkbox_group" >
+      <% 5.times do |number| %>
+        <span>
+          <%= form.label number + 1 %>
+          <%= form.check_box "rank[#{number}]" %>
+        </span>
+      <% end %>
+    </div>
+  </div>
+<% end %>

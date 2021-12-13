@@ -1,0 +1,84 @@
+// 共通ヘッダー
+header {
+  .header_title {
+    padding: 5px 0px;
+    text-align: center;
+    font-size: xx-large;
+    background-color: rgb(206, 209, 206);
+  }
+  .header_menu {
+    background-color: rgb(119, 151, 118);
+    max-height: 100;
+    display: inline-flex;
+    width: 100%;
+  }
+  img {width: 60px;}
+  .left_menu {
+    float: left;
+    display: inline-flex;
+    width: 60%;
+  }
+  .right_menu {
+    float: right;
+    display: inline-flex;
+    width: 40%;
+  }
+  .common_menu {
+    display: inline-flex;
+  }
+  .main_menu {
+    display: inline-flex;
+   }
+  li {
+    list-style: none;
+    margin-right: 10px;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+  }
+}
+
+// 共通フッター
+footer {
+  width: 100%;
+  background-color: rgb(143, 148, 143);
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+.container {
+  clear: both;
+  margin-bottom: 80px;
+}
+//　全体構成
+html {
+  position: relative;
+  min-height: 100%;
+  margin: 0 33px 0 33px;
+}
+
+nav {
+  background-color: rgb(235, 236, 235);
+  border: solid;
+  border-color: rgb(157, 160, 160);
+  margin-right: 15px;
+  padding: 10px;
+  height: 650px;
+  width: 200px;
+  float: left;
+  .search_box {
+    width: 120px;
+  }
+  .nav_field {
+    text-align: center;
+  }
+}
+
+.checkbox_group {
+  display: inline-flex;
+  margin-top: 5px;
+}

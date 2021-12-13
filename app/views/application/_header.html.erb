@@ -1,0 +1,29 @@
+<header>
+  <div class="header_title">
+    <span><%= image_tag "default_product.png" %></span>
+    <span>Sample Store</span>
+  </div>
+  <div class="header_menu">
+    <div class="left_menu">
+      <ul>
+        <li><%= link_to t("title.home"), "#" %></li>
+      </ul>
+    </div>
+    <div class="right_menu">
+      <% if current_user.present? %>
+        <ul class="main_menu">
+          <li><%= link_to t("title.product_search"), products_path %></li>
+          <li><%= link_to t("title.choose_products"), cart_orders_path %></li>
+          <li><%= link_to t("title.my_page"), current_user %></li>
+          <li><%= link_to t("title.log_out"), recognitions_path, method: :delete  %></li>
+        </ul>
+      <% else %>
+        <ul class="common_menu">
+          <li><%= link_to t("title.product_search"), products_path %></li>
+          <li><%= link_to t("title.log_in"), new_recognitions_path %></li>
+          <li><%= link_to t("title.sign_up"), new_customer_path %></li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,13 @@
+<nav>
+  <div class="nav_field" >
+  　<%= render "product_search" %>
+    <h1><%= t("title.category") %></h1>
+  </div>
+  <div>
+    <ul>
+      <% @categories.each do |category| %>
+        <li><%= link_to category.name, search_path({"products[category]" => category}) %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
