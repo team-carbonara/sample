@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h1>ECストアのサンプルサイトです</h1>
 
-Things you may want to cover:
+<h3>db:seedを忘れずに行ってください</h3>
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<ul>
+  <td>Eメール：y_taro@example.com　パスワード：taropassword</td>
+  <td>Eメール：t_hana@example.com　パスワード：hanapassword</td>
+</ul>
